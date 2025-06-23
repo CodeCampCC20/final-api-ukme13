@@ -8,6 +8,7 @@ import authRouter from "./routes/auth.js";
 import userRouter from "./routes/user.js";
 import docRouter from "./routes/docs.js";
 import healthRecRouter from "./routes/health-records.js";
+import doctorNoteRouter from "./routes/doctor-notes.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/doctors", docRouter);
 app.use("/health-records", healthRecRouter);
+app.use("/doctor-notes", doctorNoteRouter);
 
 //error handling
 app.use(errorHandling);

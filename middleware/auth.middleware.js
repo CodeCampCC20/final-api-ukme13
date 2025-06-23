@@ -21,3 +21,14 @@ export const authCheck = (req, res, next) => {
     next(error);
   }
 };
+
+export const doctorCheck = (req,res,next) => {
+  try {
+    if(req.user.role !== "Doctor"){
+      createError(403, "You don't have permission to perform this action")
+    }
+    next();
+  } catch (error) {
+    next(error)
+  }
+} 
